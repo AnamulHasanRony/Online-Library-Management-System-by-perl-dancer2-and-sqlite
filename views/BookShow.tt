@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Catalog</title>
+</head>
+<body>
+    <h1>Book Catalog</h1>
+    <ul>
+        <% FOREACH book IN books %>
+            <li>
+                <img src="<% book.image %>" alt="<% book.title %>">
+                <p>Title: <% book.title %></p>
+                <p>Author: <% book.author %></p>
+                <p>Description: <% book.description %></p>
+                <a href="/remove?id=<% book.id %>">Remove</a>
+            </li>
+        <% END %>
+    </ul>
+
+    <form action="/add" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required>
+        <input type="text" name="title" placeholder="Book Title" required>
+        <input type="text" name="author" placeholder="author" required>
+        <input type="text" name="description" placeholder="Book Description" required>
+        <button type="submit">Add Book</button>
+    </form>
+</body>
+</html>

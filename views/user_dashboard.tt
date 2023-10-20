@@ -1,0 +1,159 @@
+<html>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    </head>
+<style>
+body{
+    margin-top:20px;
+    background:#FAFAFA;
+}
+.order-card {
+    color: #fff;
+}
+
+.bg-c-blue {
+    background: linear-gradient(45deg,#4099ff,#73b4ff);
+}
+
+.bg-c-green {
+    background: linear-gradient(45deg,#2ed8b6,#59e0c5);
+}
+
+.bg-c-yellow {
+    background: linear-gradient(45deg,#FFB64D,#ffcb80);
+}
+
+.bg-c-pink {
+    background: linear-gradient(45deg,#FF5370,#ff869a);
+}
+.allinone:hover{
+    
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1); 
+
+}
+
+
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    border: none;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.card .card-block {
+    padding: 25px;
+}
+
+.order-card i {
+    font-size: 26px;
+}
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+h1{
+text-align: center;
+}
+
+
+h1 {
+  --s: 0.1em;   /* the thickness of the line */
+  --c: #19a893; /* the color */
+  
+  color: #0000;
+  padding-bottom: var(--s);
+  background: 
+    linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+  -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+  transition: 0.5s;
+}
+h1{--_p: 100%}
+
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-content: center;
+}
+h1 {
+  font-family: system-ui, sans-serif;
+  font-size: 5rem;
+  cursor: pointer;
+  
+}
+
+
+
+</style>
+
+<body>
+<%INCLUDE 'header.tt' %>
+ 
+<div class="container ">
+    <br>
+    <br>
+    <!-- Use Dancer2 to set up the web application.
+GET /: Home page listing all available books.
+GET /register: Registration page.
+POST /register: Handle user registration.
+GET /login: Login page.
+POST /login: Handle user login.
+GET /book/:id: Display book details.
+POST /book/borrow/:id: Borrow a book.
+POST /book/return/:id: Return a borrowed book.
+Admin routes to add, edit, or remove books. -->
+
+    <h1><b>User DashBoard </b></h1>
+  <div class="row">
+    <a href="/book">
+        <div class="col-md-4 col-xl-3 allinone ">
+            <div class="card bg-c-blue order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Display Books</h6>
+                    <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span><br></span></h2>
+                    <p class="m-b-0" class="card-block">Click to  Display all Books<span class="f-right"></span></p>
+                </div>
+            </div>
+        </div>
+    </a>
+    
+    <a href="/user/User_ReturnBooks">
+        <div class="col-md-4 col-xl-3 allinone">
+            <div class="card bg-c-yellow order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Return Books</h6>
+                    <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span><br></span></h2>
+                    <p class="m-b-0">Click to Return Books<span class="f-right"></span></p>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <a href="/user/User_BorrowBooks">
+        <div class="col-md-4 col-xl-3 allinone">
+            <div class="card bg-c-pink order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Borrow Books</h6>
+                    <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span><br></span></h2>
+                    <p class="m-b-0">Click to Borrow Books<span class="f-right"></span></p>
+                </div>
+            </div>
+        </div>
+    </a>
+        
+   </div>
+</div>
+

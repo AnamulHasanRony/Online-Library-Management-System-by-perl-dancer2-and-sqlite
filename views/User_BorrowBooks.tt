@@ -1,0 +1,121 @@
+<!-- 
+  Bootstrap docs: https://getbootstrap.com/docs
+  Get more snippet on https://bootstraptor.com/snippets
+-->
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js">
+
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+<title>Online Library Management System | Student Signup</title>
+<!-- BOOTSTRAP CORE STYLE  -->
+<link href="assets/css/bootstrap.css" rel="stylesheet" />
+<!-- FONT AWESOME STYLE  -->
+<link href="assets/css/font-awesome.css" rel="stylesheet" />
+<!-- CUSTOM STYLE  -->
+<link href="assets/css/style.css" rel="stylesheet" />
+<!-- GOOGLE FONT -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<% INCLUDE header.tt %>
+ 
+    <section class="pt-5 pb-5">
+        <div class="container">
+          <div class="row w-100">
+              <div class="col-lg-12 col-md-12 col-12">
+                  <h1 class="display-5 mb-2 text-center"><p style="font-size: 20px; font-family: Raleway,sans-serif; "><b>Available Books</b></p><hr></h1>
+                  <p class="mb-5 text-center">
+                  <table id="shoppingCart" class="table table-condensed table-responsive">
+                      <thead>
+      
+                          <tr>
+                              <th style="width:80%" ><p style="font-size: 20px;">Description</p></th>
+                              <th style="width:32%"><p style="font-size: 20px;">Books Name & Author</p></th>
+                              <th style="width:12%"><p style="font-size: 20px;">Borrow Option</p></th>
+                          </tr>
+                      </thead>
+                      
+                      <tbody>
+                          <% FOREACH book IN books %>
+                          <tr>
+                              <td data-th="Description">
+                                  <div class="row">
+                                      <div class="col-md-3 text-left">
+                                          <!-- <img src="image/:<% book.image %>" alt="Image Description"> -->
+                                          <!-- <p>its a image path <% book.image %></p> -->
+                                          <img src="/images/<% book.id %>.jpg" alt="fff" class="img-fluid d-none d-md-block rounded mb-2 shadow ">
+
+                                          <!-- <img src="/images/100.webp" alt="fff" class="img-fluid d-none d-md-block rounded mb-2 shadow "> -->
+                                          <!-- <img src="<% book.image %>" alt="<% book.title %>" class="img-fluid d-none d-md-block rounded mb-2 shadow "> -->
+                                      </div>
+                                      <div class="col-md-8 text-left mt-sm-2">
+                                          <p><h3 style="font-size: 20px; font-family: Raleway,sans-serif; "><% book.description %></h3></p>
+                                          
+                                      </div>
+                                  </div>
+                              </td>
+                              <td data-th="Books Name & Author"  class="text-left" ">
+                                  <div class="row">
+                                      <!-- <div class="col-md-9 text-left mt-sm-2"> -->
+                                      
+                                          <h4 style="font-size: 20px; font-family: Raleway,sans-serif; ">Title: <% book.title %></h4>
+                                      
+                                      <!-- </div> -->
+      
+                                  </div>
+                                  <div class="row">
+                                      <!-- <div class="col-md-9 text-left mt-sm-2"> -->
+                                      
+                                          <h4 style="font-size: 20px; font-family: Raleway,sans-serif; ">Author : <% book.author %></h4>
+                                      
+                                      <!-- </div> -->
+      
+                                  </div>
+                               </td>
+                             
+                              <td class="actions" data-th="Remove">
+                                  <a href="/user/borrow?id=<% book.id %>">
+                                  <div class="text-right">
+                                      <button class="btn btn-white border-secondary bg-white btn-md mb-2">
+                                          <i  class="fa fa-cart-plus f-left" style="font-size: 24px;"><b>Borrow This</b></i>
+                                      </button>
+                                  </div>
+                                  </a>
+                              </td>
+                          </tr>
+      
+                          <% END %>
+                          
+                        
+                      </tbody>
+                  </table>
+                
+              </div>
+          </div>
+          
+      </div>
+      </section> 
+
+    
+
+
+
+
+</body>
+</html>

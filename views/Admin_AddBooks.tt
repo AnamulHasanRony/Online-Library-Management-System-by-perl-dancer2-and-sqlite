@@ -1,0 +1,54 @@
+
+
+<section >
+
+        <div class="content-wrapper">
+            <div class="container">
+           <div class="row pad-botm">
+               <div class="col-md-12">
+                   <h4 class="header-line">Add Books</h4>
+                   
+                               </div>
+   
+           </div>
+                <div class="row">
+              
+   <div class="col-md-9 col-md-offset-1">
+                  <div class="panel panel-danger">
+                           <div class="panel-heading">
+                            Add Books
+                           </div>
+                           <div class="panel-body">
+                               <form name="signup"  action="/admin/add" method="POST" enctype="multipart/form-data">
+   <div class="form-group">
+   <label>Book Title</label>
+   <input class="form-control" type="text" name="title" autocomplete="off" required />
+   </div>
+   
+   
+   <div class="form-group">
+   <label>Author </label>
+   <input class="form-control" type="text" name="author" maxlength="20" autocomplete="off" required />
+   </div>
+                                           
+   <div class="form-group">
+   <label>Book Description </label>
+   <input class="form-control" type="text" name="description"   autocomplete="off" required  />
+      <span id="user-availability-status" style="font-size:12px;"></span> 
+   </div>
+   
+   
+   <input type="file" name="image" accept="image/*" required>
+
+                                
+   <button type="submit" name="signup" class="btn btn-danger" id="submit"> Add Book </button>
+   
+                                       </form>
+                               </div>
+                           </div>
+                    </div>
+           </div>
+       </div>
+       </div>
+        
+    </section>
